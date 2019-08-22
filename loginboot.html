@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+
+*{
+  box-sizing:border-box;
+ 
+ }
+.box{
+
+width:70%;
+margin:auto;
+
+padding:50px;
+color:black;
+text-align:center;
+
+box-shadow: 0 4px 8px 0 rgba(0,0,2,1), 0 6px 20px 0 rgba(0,0,0,1.9);
+ }
+input[type=text],input[type=password]{
+width:70%;
+padding:20px;
+border: 1 px solid black;
+border-radius:4px;
+resize:vertical;
+
+}
+.label{
+padding:15px;
+background-color:mediumseagreen;
+color:white;
+}
+input[type=submit],input[type=reset]{
+background-color:mediumseagreen;
+color:white;
+padding:12px 20px;
+border-radius:4px;
+cursor: pointer;
+width:250px;
+}
+</style>
+</head>
+<body background="concert3.jpg"><center>
+<div class="box" style="background-color:lavender;"><div class="label">
+<strong>LOGIN FOR UPDATES
+</strong></div><br><br>
+<form name="uform">
+User Name:<br>
+<input type="text" name="user" placeholder="type username..."><br>
+<br>passsword<br><input type="password" name="pass" maxlength="8" placeholder="maxium 8 chacters..."><br>
+<br>email id:<br><input type="text" name="email" placeholder="type email..." ><br><br>
+<input type=submit value="confirm" onclick="validate()">&nbsp<input type="reset" value="clear" name="r1" >
+</form>
+
+</centre>
+
+<script>
+
+function validate()
+{
+var res=true;
+var password=document.uform.pass.value;
+var user=document.uform.user.value;
+var email1=document.uform.email.value.indexOf("@");
+var email2=document.uform.email.value.indexOf(".");
+var email3=document.uform.email.value;
+var email4=document.uform.email.value.lastIndexOf("@");
+if(user.length==0)
+{
+alert("username incompete")
+}
+else if(password.length==0)
+{
+alert("password incomplete")
+}
+else if((email3.length==0)||(email1==-1)||(email2==-1)||(email4>email1))
+{
+alert("incorrect Email address");
+res=false;
+}
+
+else
+{alert('You will recive your updates soon..')}
+}
+
+</script>
+</body>
+</html>

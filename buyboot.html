@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+*{
+  box-sizing:border-box;
+ 
+ }
+.box{
+margin:auto;
+ 
+width:80%;
+padding:50px;
+color:black;
+text-align:center;
+box-shadow: 0 4px 8px 0 rgba(0,0,2,1), 0 6px 20px 0 rgba(0,0,0,1.9);
+ }
+input[type=text]{
+width:70%;
+padding:20px;
+border: 1 px solid black;
+border-radius:4px;
+resize:vertical;
+
+}
+.label{
+padding:15px;
+background-color:mediumseagreen;
+color:white;
+}
+input[type=submit]{
+background-color:mediumseagreen;
+color:white;
+padding:12px 20px;
+border-radius:4px;
+cursor: pointer;
+float:center;
+width:250px;
+}
+</style>
+</head>
+<body background="concert3.jpg">
+<center>
+<div class="box" style="background-color:lavender;"><div class="label">
+<strong>TICKETS<br><i>18$ each</i></strong></div><br>
+<form name="uform">
+name:<br>
+<input type="text"  name="name"  placeholder="username..."><br>
+no of tickets:<br>
+<input type="text"  name="no"  placeholder="no of tickets..."><br>
+Send To:<br>
+<input type="text"  name="email" placeholder="enter email...">
+<br><br>
+<input type="submit" value="pay" onclick="validate()">
+<input type="submit" value="close">
+</div></center>
+
+<script>
+
+function validate()
+{
+var res=true;
+var name=document.uform.name.value;
+var notickets=document.uform.no.value;
+var email1=document.uform.email.value.indexOf("@");
+var email2=document.uform.email.value.indexOf(".");
+var email3=document.uform.email.value;
+var email4=document.uform.email.value.lastIndexOf("@");
+if(name.length==0)
+{
+alert("username incompete")
+}
+else if((notickets.length==0)||(isNaN(notickets)))
+{
+alert("choose valid number of tickets")
+}
+else if((email3.length==0)||(email1==-1)||(email2==-1)||(email4>email1))
+{
+alert("incorrect Email address");
+res=false;
+}
+
+else
+{alert('TICKETS CONFIRMED!')}
+}
+
+</script>
+</body>
+</html>
